@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Order;
 use App\Models\Worker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +19,7 @@ class WorkerExOrderTypeFactory extends Factory
     {
         return [
             'worker_id' => Worker::factory(),
-            'order_type_id' => Order::factory(),
+            'order_type_id' => $this->faker->numberBetween(1, 3)
         ];
     }
 }

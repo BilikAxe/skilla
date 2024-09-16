@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Order;
+use App\Models\Worker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,8 @@ class WorkerExOrderTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'worker_id' => $this->faker->numberBetween(1, 10),
-            'order_type_id' => $this->faker->numberBetween(1, 3),
+            'worker_id' => Worker::factory(),
+            'order_type_id' => Order::factory(),
         ];
     }
 }
